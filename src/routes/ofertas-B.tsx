@@ -38,54 +38,16 @@ export function OfertasB() {
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 pb-14 pt-8 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:pt-12">
           <div className="order-2 flex justify-center lg:order-1">
-            {/* mock WhatsApp Runners Club Kalfe */}
+            {/* animação Runners Club Kalfe */}
             <div className="relative">
               <div aria-hidden className="absolute -inset-6 rounded-[3rem] bg-gradient-to-b from-[#25D366]/25 via-transparent to-[#FF8A00]/15 blur-2xl" />
-              <div className="relative w-full max-w-[320px] rounded-[2.5rem] border-[10px] border-[#1c1c1e] bg-black shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/10">
-              <div className="flex items-center justify-between rounded-t-[1.8rem] bg-black px-5 pb-1 pt-3 text-[11px] font-semibold text-white">
-                  <span>11:08</span>
-                  <span className="h-5 w-20 rounded-full bg-[#1c1c1e]" />
-                  <span>📶 🔋</span>
-                </div>
-              <div className="flex items-center gap-2 rounded-t-xl bg-[#075E54] px-3 py-2.5 text-white">
-                <span className="text-lg leading-none">‹</span>
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] text-[11px] font-black ring-2 ring-white/30">
-                  RC
-                </span>
-                <div className="min-w-0 flex-1 leading-tight">
-                  <p className="truncate text-[13px] font-bold">Runners Club Kalfe 🏃‍♂️🔥</p>
-                  <p className="truncate text-[10px] text-white/75">Kalfe, Ana, Pedro e +847 online</p>
-                </div>
-                <span className="flex gap-2 text-sm opacity-80">◎ ✆</span>
-              </div>
-              <div className="space-y-2 bg-[#ECE5DD] bg-[radial-gradient(circle_at_20%_20%,rgba(0,0,0,0.04),transparent_60%)] px-3 py-3 text-[#111]">
-                <p className="mx-auto w-fit rounded-full bg-[#FFF3CD] px-3 py-1 text-center text-[9px] font-medium text-[#7a6200] shadow-sm">
-                  🔒 As mensagens são criptografadas de ponta a ponta
-                </p>
-                <div className="rounded-xl rounded-tl-sm bg-white p-2.5 text-[11px] leading-snug shadow">
-                  <p className="text-[10px] font-bold uppercase text-[#075E54]">Fila muito custo-benefício</p>
-                  <p className="mt-1 font-semibold">Tênis Fila Diffusion</p>
-                  <p className="mt-1">De <s className="text-black/50">R$ 399</s> por <strong className="text-[#128C7E]">R$ 186</strong></p>
-                  <p>Use o Cupom: FASHIONML 🎁</p>
-                  <p className="mt-1 text-[#1a73e8]">Vendido por Loja Oficial no ML<br />https://meli.li/1Uoypx7</p>
-                  <p className="mt-1 text-right text-[9px] text-black/50">10:09 ✓✓</p>
-                </div>
-                <div className="rounded-xl rounded-tl-sm bg-white p-2.5 text-[11px] leading-snug shadow">
-                  <p className="text-[10px] font-bold text-[#c81e1e]">ADM Runners Club Kalfe ✅</p>
-                  <div className="relative mt-1.5 overflow-hidden rounded-lg bg-white">
-                    <img src="/uploads/WhatsApp_Image_2026-09-13_at_14.23.48.jpeg" alt="Tênis Asics Gel-pulse 16 e meia no grupo" className="h-40 w-full object-cover" loading="eager" />
-                      <span className="absolute left-2 top-2 rounded-full bg-[#FF3B30] px-2 py-0.5 text-[10px] font-black text-white shadow">-34%</span>
-                  </div>
-                  <p className="mt-2 font-bold uppercase">🔥 Achado do dia para corredores! 🔥</p>
-                  <p className="mt-1">👟 Tênis de Corrida Masculino Asics Gel-pulse 16 e Meia</p>
-                  <p>🏷️ Marca: Asics</p>
-                  <p className="mt-1">❌ De: <s className="text-black/50">R$ 741,99</s></p>
-                  <p>✅ Por apenas: <strong className="text-[#128C7E]">R$ 482,40</strong> (-34% OFF)</p>
-                  <p>💰 Economia real de R$ 259,59!</p>
-                  <p className="mt-2 text-center text-[9px] text-black/50">Somente <span className="text-orange-600">admins</span> podem enviar mensagens</p>
-                </div>
-              </div>
-              <div className="rounded-b-[1.8rem] bg-black py-2 text-center text-[10px] text-white/40">─</div>
+              <div className="relative w-full max-w-[320px] overflow-hidden rounded-[2.5rem] border-[10px] border-[#1c1c1e] bg-black shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/10">
+                <img
+                  src="/uploads/Runners_Club_Kalfe_Animacao.gif"
+                  alt="Animação do grupo Runners Club Kalfe com ofertas"
+                  className="w-full object-cover"
+                  loading="eager"
+                />
               </div>
             </div>
           </div>
