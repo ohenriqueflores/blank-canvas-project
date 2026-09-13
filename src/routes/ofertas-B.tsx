@@ -39,30 +39,19 @@ export function OfertasB() {
         </div>
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-12 pt-10 sm:px-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16 lg:pb-16 lg:pt-14">
           <div className="order-2 flex justify-center lg:order-1">
-            {/* Vídeo Runners Club Kalfe — via Drive direto (sem precisar de upload), com GIF como poster/fallback */}
+            {/* Vídeo Runners Club Kalfe — anexo enviado, em loop */}
             <div className="w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[380px]">
               <video
                 key="runners-club-video"
-                className="block h-auto w-full select-none"
+                className="block h-auto w-full select-none rounded-2xl"
+                src={runnersVideo.url}
                 autoPlay
                 loop
                 muted
                 playsInline
                 preload="auto"
-                poster="/uploads/Runners_Club_Kalfe_Animacao_gif.gif?v=2"
-              >
-                <source
-                  src="https://drive.google.com/uc?export=download&id=1K2LNbv5jiBwJH46jNAkXuT8iiXYOnRqG"
-                  type="video/mp4"
-                />
-                <img
-                  src="/uploads/Runners_Club_Kalfe_Animacao_gif.gif?v=2"
-                  alt="Animação do grupo Runners Club Kalfe com ofertas entrando todo dia"
-                  className="block h-auto w-full select-none"
-                  loading="eager"
-                  draggable={false}
-                />
-              </video>
+                aria-label="Animação do grupo Runners Club Kalfe com ofertas entrando todo dia"
+              />
             </div>
           </div>
           <div className="order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
