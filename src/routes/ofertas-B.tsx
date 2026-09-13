@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { WHATSAPP_URL } from "@/lib/runners";
+import runnersVideo from "@/assets/Runners_Club_Kalfe.mp4.asset.json";
 
 export const Route = createFileRoute("/ofertas-B")({
   component: OfertasB,
