@@ -6,14 +6,14 @@ export const Route = createFileRoute("/ofertas-B")({
 });
 
 const STORE_LOGOS = [
-  { src: "/uploads/Logotipo_da_Penalty__2024_.svg", alt: "Logo Penalty" },
+  { src: "/uploads/penalty-logo.svg", alt: "Logo Penalty" },
   { src: "/uploads/images__1_.png", alt: "Logo de marca esportiva parceira" },
   { src: "/uploads/9ea42f7b638f36be2a996e7b0de3cb5c.jpg", alt: "Logo de marca esportiva parceira" },
   { src: "/uploads/MIZUNO_logo.svg.webp", alt: "Logo Mizuno" },
   { src: "/uploads/Fila_logo.svg.webp", alt: "Logo Fila" },
   { src: "/uploads/Under_armour_logo.svg.webp", alt: "Logo Under Armour" },
   { src: "/uploads/Adidas_Logo.svg.webp", alt: "Logo Adidas" },
-  { src: "/uploads/Umbro_logo__current_.svg", alt: "Logo Umbro" },
+  { src: "/uploads/umbro-logo.svg", alt: "Logo Umbro" },
 ];
 
 export function WhatsAppIcon({ className = "h-6 w-6" }: { className?: string }) {
@@ -72,14 +72,16 @@ export function OfertasB() {
                 </div>
                 <div className="rounded-xl rounded-tl-sm bg-white p-2.5 text-[11px] leading-snug shadow">
                   <p className="text-[10px] font-bold text-[#c81e1e]">ADM Runners Club Kalfe ✅</p>
-                  <div className="relative mt-1.5 overflow-hidden rounded-lg">
-                    <img src="/uploads/WhatsApp_Image_2026-09-13_at_14.23.48.jpeg" alt="Oferta Asics Gel-pulse 16 no grupo" className="h-40 w-full object-cover" loading="eager" />
-                      <span className="absolute left-2 top-2 rounded-full bg-[#FF3B30] px-2 py-0.5 text-[10px] font-black text-white shadow">-63%</span>
+                  <div className="relative mt-1.5 overflow-hidden rounded-lg bg-white">
+                    <img src="/uploads/WhatsApp_Image_2026-09-13_at_14.23.48.jpeg" alt="Tênis Asics Gel-pulse 16 e meia no grupo" className="h-40 w-full object-cover" loading="eager" />
+                      <span className="absolute left-2 top-2 rounded-full bg-[#FF3B30] px-2 py-0.5 text-[10px] font-black text-white shadow">-34%</span>
                   </div>
-                  <p className="mt-2 font-bold uppercase">90 conto nesse slide brabo da Nike 🔥</p>
-                  <p className="mt-1">Chinelo Nike Victori One</p>
-                  <p className="mt-1">De R$ 249 por R$ 91 no Pix</p>
-                  <p>Use o Cupom: MODALIVRE + Selecione Pix</p>
+                  <p className="mt-2 font-bold uppercase">🔥 Achado do dia para corredores! 🔥</p>
+                  <p className="mt-1">👟 Tênis de Corrida Masculino Asics Gel-pulse 16 e Meia</p>
+                  <p>🏷️ Marca: Asics</p>
+                  <p className="mt-1">❌ De: <s className="text-black/50">R$ 741,99</s></p>
+                  <p>✅ Por apenas: <strong className="text-[#128C7E]">R$ 482,40</strong> (-34% OFF)</p>
+                  <p>💰 Economia real de R$ 259,59!</p>
                   <p className="mt-2 text-center text-[9px] text-black/50">Somente <span className="text-orange-600">admins</span> podem enviar mensagens</p>
                 </div>
               </div>
@@ -107,8 +109,8 @@ export function OfertasB() {
                 </span>
                 Entrar no Grupo VIP
               </a>
-              <p className="mt-3 text-xs leading-relaxed text-white/55">
-                Grupo <strong className="text-white">100% GRATUITO</strong> - saia quando quiser<br />Divulgamos promoções somente de lojas oficiais
+              <p className="mt-3 text-center text-[11px] leading-relaxed text-white/55 lg:whitespace-nowrap lg:text-left">
+                Grupo <strong className="text-white">100% GRATUITO</strong> - saia quando quiser • Divulgamos promoções somente de lojas oficiais
               </p>
             </div>
             <div className="mt-5 flex items-center justify-center gap-2.5 lg:justify-start">
