@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as OfertasBRouteImport } from './routes/ofertas-B'
-import { Route as OfertasBRouteImport } from './routes/ofertas-b'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,39 +22,30 @@ const OfertasBRoute = OfertasBRouteImport.update({
   path: '/ofertas-B',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OfertasBRoute = OfertasBRouteImport.update({
-  id: '/ofertas-b',
-  path: '/ofertas-b',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ofertas-B': typeof OfertasBRoute
-  '/ofertas-b': typeof OfertasBRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ofertas-B': typeof OfertasBRoute
-  '/ofertas-b': typeof OfertasBRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/ofertas-B': typeof OfertasBRoute
-  '/ofertas-b': typeof OfertasBRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ofertas-B' | '/ofertas-b'
+  fullPaths: '/' | '/ofertas-B'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ofertas-B' | '/ofertas-b'
-  id: '__root__' | '/' | '/ofertas-B' | '/ofertas-b'
+  to: '/' | '/ofertas-B'
+  id: '__root__' | '/' | '/ofertas-B'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  OfertasBRoute: typeof OfertasBRoute
   OfertasBRoute: typeof OfertasBRoute
 }
 
@@ -75,19 +65,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfertasBRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/ofertas-b': {
-      id: '/ofertas-b'
-      path: '/ofertas-b'
-      fullPath: '/ofertas-b'
-      preLoaderRoute: typeof OfertasBRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  OfertasBRoute: OfertasBRoute,
   OfertasBRoute: OfertasBRoute,
 }
 export const routeTree = rootRouteImport
