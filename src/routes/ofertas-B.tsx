@@ -38,22 +38,18 @@ export function OfertasB() {
         </div>
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-12 pt-10 sm:px-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16 lg:pb-16 lg:pt-14">
           <div className="order-2 flex justify-center lg:order-1">
-            {/* animação Runners Club Kalfe em loop */}
-            <div className="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[380px]">
-              <div aria-hidden className="absolute -inset-6 rounded-[3rem] bg-gradient-to-b from-[#25D366]/25 via-transparent to-[#FF8A00]/15 blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2.5rem] border-[10px] border-[#1c1c1e] bg-black shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/10">
-                <img
-                  src="/uploads/Runners_Club_Kalfe_Animacao_gif.gif"
-                  alt="Animação do grupo Runners Club Kalfe com ofertas"
-                  className="block h-auto w-full object-cover"
-                  loading="eager"
-                  decoding="async"
-                  draggable={false}
-                />
-              </div>
-              <p className="mt-4 text-center text-xs font-medium tracking-wide text-white/50">
-                Prévia real do grupo • ofertas entrando todo dia
-              </p>
+            {/* GIF Runners Club Kalfe — anima em loop nativo no <img> */}
+            <div className="w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[380px]">
+              <img
+                key="runners-club-gif"
+                src="/uploads/Runners_Club_Kalfe_Animacao_gif.gif?v=2"
+                alt="Animação do grupo Runners Club Kalfe com ofertas entrando todo dia"
+                className="block h-auto w-full select-none"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                draggable={false}
+              />
             </div>
           </div>
           <div className="order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
