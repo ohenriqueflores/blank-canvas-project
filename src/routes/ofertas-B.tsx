@@ -62,7 +62,7 @@ export function OfertasB() {
               COMPRE TÊNIS<br />COM ATÉ <span className="bg-gradient-to-r from-[#FF8A00] to-[#FFB347] bg-clip-text text-transparent">90% DE DESCONTO</span>
             </h1>
             <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:text-base lg:mx-0">
-              Encontro as melhores ofertas de tênis <strong className="text-white">ORIGINAIS</strong> e compartilho tudo com você no <strong className="text-white">Runners Club Kalfe</strong>.
+              Encontramos as melhores ofertas de tênis <strong className="text-white">ORIGINAIS</strong> e compartilhamos tudo com você no <strong className="text-white">Runners Club Kalfe</strong>.
             </p>
             <div className="mx-auto mt-6 max-w-md lg:mx-0">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-b from-[#2BE07A] to-[#00C95C] px-8 py-4 text-lg font-extrabold text-white shadow-[0_16px_45px_-10px_rgba(0,230,118,0.9)] transition-all hover:scale-[1.02] hover:brightness-110 active:scale-[0.98]">
