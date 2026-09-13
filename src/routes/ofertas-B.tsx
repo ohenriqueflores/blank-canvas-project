@@ -10,6 +10,10 @@ const STORE_LOGOS = [
   { src: "/uploads/images__1_.png", alt: "Logo de marca esportiva parceira" },
   { src: "/uploads/9ea42f7b638f36be2a996e7b0de3cb5c.jpg", alt: "Logo de marca esportiva parceira" },
   { src: "/uploads/MIZUNO_logo.svg.webp", alt: "Logo Mizuno" },
+  { src: "/uploads/Fila_logo.svg.webp", alt: "Logo Fila" },
+  { src: "/uploads/Under_armour_logo.svg.webp", alt: "Logo Under Armour" },
+  { src: "/uploads/Adidas_Logo.svg.webp", alt: "Logo Adidas" },
+  { src: "/uploads/Umbro_logo__current_.svg", alt: "Logo Umbro" },
 ];
 
 export function WhatsAppIcon({ className = "h-6 w-6" }: { className?: string }) {
