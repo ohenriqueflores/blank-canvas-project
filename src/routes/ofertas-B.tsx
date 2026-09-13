@@ -73,7 +73,7 @@ export function OfertasB() {
                 <div className="rounded-xl rounded-tl-sm bg-white p-2.5 text-[11px] leading-snug shadow">
                   <p className="text-[10px] font-bold text-[#c81e1e]">ADM Runners Club Kalfe ✅</p>
                   <div className="relative mt-1.5 overflow-hidden rounded-lg">
-                    <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?q=80&w=600&auto=format&fit=crop" alt="Chinelo Nike em oferta no grupo" className="h-40 w-full object-cover" loading="eager" />
+                    <img src="/uploads/WhatsApp_Image_2026-09-13_at_14.23.48.jpeg" alt="Oferta Asics Gel-pulse 16 no grupo" className="h-40 w-full object-cover" loading="eager" />
                       <span className="absolute left-2 top-2 rounded-full bg-[#FF3B30] px-2 py-0.5 text-[10px] font-black text-white shadow">-63%</span>
                   </div>
                   <p className="mt-2 font-bold uppercase">90 conto nesse slide brabo da Nike 🔥</p>
