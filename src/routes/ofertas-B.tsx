@@ -6,9 +6,10 @@ export const Route = createFileRoute("/ofertas-B")({
 });
 
 const STORE_LOGOS = [
-  { src: "/uploads/images__1_.png", alt: "Logo de marca parceira" },
-  { src: "/uploads/9ea42f7b638f36be2a996e7b0de3cb5c.jpg", alt: "Logo de loja parceira" },
   { src: "/uploads/Logotipo_da_Penalty__2024_.svg", alt: "Logo Penalty" },
+  { src: "/uploads/images__1_.png", alt: "Logo de marca esportiva parceira" },
+  { src: "/uploads/9ea42f7b638f36be2a996e7b0de3cb5c.jpg", alt: "Logo de marca esportiva parceira" },
+  { src: "/uploads/MIZUNO_logo.svg.webp", alt: "Logo Mizuno" },
 ];
 
 export function WhatsAppIcon({ className = "h-6 w-6" }: { className?: string }) {
@@ -107,14 +108,11 @@ export function OfertasB() {
               </p>
             </div>
             <div className="mt-5 flex items-center justify-center gap-2.5 lg:justify-start">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white px-1 text-center text-[9px] font-black leading-tight text-black">NIKE</span>
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white px-1 text-center text-[8px] font-black leading-tight text-black">adidas</span>
               {STORE_LOGOS.map((l) => (
                 <span key={l.src} className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-white">
                   <img src={l.src} alt={l.alt} className="h-8 w-8 object-contain" loading="lazy" />
                 </span>
               ))}
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-lg font-black text-black">+</span>
             </div>
           </div>
         </div>
