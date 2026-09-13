@@ -9,43 +9,53 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as OfertasBRouteImport } from './routes/ofertas-B'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OfertasBRouteImport } from './routes/ofertas-B'
+import { Route as OfertasBRouteImport } from './routes/ofertas-b'
 
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OfertasBRoute = OfertasBRouteImport.update({
   id: '/ofertas-B',
   path: '/ofertas-B',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const OfertasBRoute = OfertasBRouteImport.update({
+  id: '/ofertas-b',
+  path: '/ofertas-b',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ofertas-B': typeof OfertasBRoute
+  '/ofertas-b': typeof OfertasBRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ofertas-B': typeof OfertasBRoute
+  '/ofertas-b': typeof OfertasBRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/ofertas-B': typeof OfertasBRoute
+  '/ofertas-b': typeof OfertasBRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ofertas-B'
+  fullPaths: '/' | '/ofertas-B' | '/ofertas-b'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ofertas-B'
-  id: '__root__' | '/' | '/ofertas-B'
+  to: '/' | '/ofertas-B' | '/ofertas-b'
+  id: '__root__' | '/' | '/ofertas-B' | '/ofertas-b'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  OfertasBRoute: typeof OfertasBRoute
   OfertasBRoute: typeof OfertasBRoute
 }
 
@@ -65,11 +75,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfertasBRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ofertas-b': {
+      id: '/ofertas-b'
+      path: '/ofertas-b'
+      fullPath: '/ofertas-b'
+      preLoaderRoute: typeof OfertasBRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  OfertasBRoute: OfertasBRoute,
   OfertasBRoute: OfertasBRoute,
 }
 export const routeTree = rootRouteImport
