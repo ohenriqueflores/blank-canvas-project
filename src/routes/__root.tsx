@@ -77,14 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Runners Club Kalfe — Ofertas de Tênis e Artigos Esportivos" },
+      {
+        name: "description",
+        content:
+          "Entre para o grupo gratuito Runners Club Kalfe no WhatsApp e receba as melhores ofertas de tênis e artigos esportivos com até 70% OFF.",
+      },
+      { name: "author", content: "Runners Club Kalfe" },
+      { property: "og:title", content: "Runners Club Kalfe — Ofertas de Tênis com até 70% OFF" },
+      {
+        property: "og:description",
+        content:
+          "Grupo gratuito no WhatsApp com ofertas diárias de tênis Nike, Adidas, Asics, Mizuno, New Balance e mais.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -102,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
