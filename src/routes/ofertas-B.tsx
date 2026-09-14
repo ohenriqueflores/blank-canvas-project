@@ -146,14 +146,7 @@ const CSS = `
 
 .lp-tenis .fone { display: block; width: min(100%, 330px); margin: 46px auto 36px; -webkit-tap-highlight-color: transparent; }
 .lp-tenis .fone:active { opacity: .93; }
-.lp-tenis .fone video { display: block; width: 100%; height: auto; }
-.lp-tenis .fone video {
-  border-radius: 15% / 7.4%; background: transparent;
-  box-shadow:
-    0 0 16px rgba(190, 215, 255, 0.14),
-    0 0 48px rgba(120, 170, 255, 0.12),
-    0 0 110px rgba(70, 130, 255, 0.08);
-}
+.lp-tenis .fone video { display: block; width: 100%; height: auto; background: transparent; }
 
 @media (prefers-reduced-motion: reduce) {
   .lp-tenis .cta { animation: none; }
