@@ -4,106 +4,287 @@ import runnersVideo from "@/assets/Runners_Club_Kalfe.mp4.asset.json";
 
 export const Route = createFileRoute("/ofertas-B")({
   component: OfertasB,
+  head: () => ({
+    meta: [
+      { title: "Tênis Ofertas — Chega de pagar caro em tênis" },
+      {
+        name: "description",
+        content:
+          "Encontro as melhores ofertas de tênis ORIGINAIS e compartilho tudo com você. Entre no grupo VIP e receba os descontos primeiro.",
+      },
+      { property: "og:title", content: "Tênis Ofertas — Chega de pagar caro em tênis" },
+      {
+        property: "og:description",
+        content: "Encontro as melhores ofertas de tênis ORIGINAIS e compartilho tudo com você.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "theme-color", content: "#020A14" },
+    ],
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Barlow+Condensed:wght@800&display=swap",
+      },
+    ],
+  }),
 });
 
-const STORE_LOGOS = [
-  { src: "/uploads/penalty-logo.svg", alt: "Logo Penalty" },
-  { src: "/uploads/images__1_.png", alt: "Logo de marca esportiva parceira" },
-  { src: "/uploads/9ea42f7b638f36be2a996e7b0de3cb5c.jpg", alt: "Logo de marca esportiva parceira" },
-  { src: "/uploads/MIZUNO_logo.svg.webp", alt: "Logo Mizuno" },
-  { src: "/uploads/Fila_logo.svg.webp", alt: "Logo Fila" },
-  { src: "/uploads/Under_armour_logo.svg.webp", alt: "Logo Under Armour" },
-  { src: "/uploads/Adidas_Logo.svg.webp", alt: "Logo Adidas" },
-  { src: "/uploads/umbro-logo.svg", alt: "Logo Umbro" },
+const AVATARS = [
+  "/uploads/lp/av5.jpg",
+  "/uploads/lp/av6.jpg",
+  "/uploads/lp/av7.jpg",
+  "/uploads/lp/av8.jpg",
 ];
+
+const BRAND_LOGOS = [
+  { src: "/uploads/lp/brands/nike.png", alt: "Nike" },
+  { src: "/uploads/lp/brands/adidas.png", alt: "Adidas" },
+  { src: "/uploads/lp/brands/nuvemshop.png", alt: "Nuvemshop" },
+  { src: "/uploads/lp/brands/mercadolivre.png", alt: "Mercado Livre" },
+  { src: "/uploads/lp/brands/centauro.png", alt: "Centauro" },
+];
+
+const CSS = `
+.lp-tenis {
+  --verde: #00CF2D;
+  --verde-topo: #1BD743;
+  --amarelo: #FFD43C;
+  --laranja: #F97316;
+  --pad: clamp(15px, 8.8vw, 45px);
+  font-family: 'Manrope', system-ui, sans-serif;
+  background-color: #020A14;
+  background-image:
+    linear-gradient(rgba(14,165,233,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  min-height: 100dvh;
+  -webkit-text-size-adjust: 100%;
+}
+.lp-tenis * { margin: 0; padding: 0; box-sizing: border-box; }
+
+.lp-tenis .hero { position: relative; overflow: hidden; padding: 50px var(--pad) 0; }
+
+.lp-tenis .topbar { display: flex; justify-content: center; margin-inline: calc(12px - var(--pad)); }
+.lp-tenis .selo {
+  flex: none; max-width: 100%; display: flex; align-items: center; gap: 7.2px;
+  padding: 4.1px 11.3px 4.1px 4.1px; border-radius: 999px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.lp-tenis .avatares { flex: none; display: flex; }
+.lp-tenis .avatares img {
+  width: min(19.4px, 4.46vw); height: min(19.4px, 4.46vw); border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.5); object-fit: cover;
+}
+.lp-tenis .avatares img + img { margin-left: -6px; }
+.lp-tenis .selo-texto {
+  color: rgba(255,255,255,.78); font-family: inherit; font-size: min(12.5px, 2.57vw);
+  font-weight: 400; line-height: 1.2; white-space: nowrap;
+}
+@media (max-width: 699px) {
+  .lp-tenis .selo { gap: 8px; padding: 4.6px 12.6px 4.6px 4.6px; }
+  .lp-tenis .avatares img { width: min(21.6px, 4.97vw); height: min(21.6px, 4.97vw); border-width: 1.7px; }
+  .lp-tenis .avatares img + img { margin-left: -6.7px; }
+  .lp-tenis .selo-texto { font-size: min(13.9px, 2.86vw); }
+}
+
+.lp-tenis h1 {
+  margin-top: 40px; margin-left: -19px; margin-right: -19px; color: #fff;
+  font-family: 'Barlow Condensed', 'Manrope', system-ui, sans-serif;
+  font-size: clamp(44px, 14.2vw, 74px); font-weight: 800; line-height: 1.01;
+  letter-spacing: 0.01em; text-align: center;
+}
+.lp-tenis h1 .destaque { color: var(--laranja); }
+
+.lp-tenis .sub {
+  margin: 16px auto 0; max-width: 21em; color: rgba(255,255,255,.72);
+  font-size: clamp(16.5px, 4.2vw, 19.4px); font-weight: 500; line-height: 1.48;
+  letter-spacing: -0.015em; text-align: center; text-wrap: balance;
+}
+.lp-tenis .sub b { font-weight: 800; color: rgba(255,255,255,.92); }
+
+.lp-tenis .cta {
+  display: flex; align-items: center; justify-content: center; gap: 8.2px;
+  width: clamp(285px, calc(125px + 44.3vw), 320px); height: 63px; margin: 32px auto 0;
+  padding: 0 22px; border-radius: 999px; background: var(--verde); color: #fff;
+  font-family: inherit; font-size: clamp(18.3px, 4.94vw, 21.8px); font-weight: 800;
+  letter-spacing: -0.02em; white-space: nowrap; text-decoration: none; position: relative;
+  box-shadow: 0 12px 30px -8px rgba(0,207,45,.45);
+  animation: lp-pulsar 2.6s ease-in-out infinite;
+}
+.lp-tenis .cta::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  box-shadow: 0 17px 44px -8px rgba(0,207,45,.78); opacity: 0;
+  animation: lp-brilhar 2.6s ease-in-out infinite; pointer-events: none;
+}
+@keyframes lp-pulsar { 0%,100% { transform: scale(1); } 50% { transform: scale(1.0264); } }
+@keyframes lp-brilhar { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
+.lp-tenis .cta svg { flex: none; width: 28px; height: 28px; }
+
+.lp-tenis .rodape-cta { display: flex; flex-direction: column; align-items: center; margin-top: 21px; margin-bottom: 24px; }
+.lp-tenis .cta-sub {
+  margin: 0; color: rgba(255,255,255,.62); font-family: inherit;
+  font-size: clamp(9.2px, 2.68vw, 10.8px); line-height: 1.45; text-align: center; white-space: nowrap;
+}
+.lp-tenis .cta-sub:first-child { margin-bottom: 2px; white-space: normal; }
+.lp-tenis .cta-sub strong { font-weight: 600; color: #fff; }
+
+.lp-tenis .marcas {
+  display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 9.2px;
+  margin: 9px calc(12px - var(--pad)) 0; align-self: stretch;
+}
+.lp-tenis .marca {
+  width: 35px; height: 35px; border-radius: 50%; background: #fff; border: 1px solid #EBE9E3;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08); display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.lp-tenis .marca img { width: 20px; height: 20px; object-fit: contain; display: block; }
+.lp-tenis .marca-mais { background: #E5E5E5; color: #14130F; font-family: inherit; font-weight: 600; font-size: 15px; line-height: 1; }
+
+.lp-tenis .fone { display: block; width: min(100%, 330px); margin: 46px auto 36px; -webkit-tap-highlight-color: transparent; }
+.lp-tenis .fone:active { opacity: .93; }
+.lp-tenis .fone video { display: block; width: 100%; height: auto; }
+.lp-tenis .fone video {
+  border-radius: 15% / 7.4%; background: transparent;
+  box-shadow:
+    0 0 16px rgba(190, 215, 255, 0.14),
+    0 0 48px rgba(120, 170, 255, 0.12),
+    0 0 110px rgba(70, 130, 255, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-tenis .cta { animation: none; }
+  .lp-tenis .cta::after { animation: none; opacity: 0; }
+}
+
+@media (min-width: 700px) and (max-width: 979px) {
+  .lp-tenis .hero { padding-inline: calc(50% - 195px); }
+  .lp-tenis h1 { font-size: 74px; }
+  .lp-tenis .sub { font-size: 19.4px; }
+  .lp-tenis .cta { font-size: 21.8px; }
+  .lp-tenis .cta-sub { font-size: 12.5px; }
+  .lp-tenis .marcas { gap: 11px; }
+  .lp-tenis .marca { width: 36px; height: 36px; }
+  .lp-tenis .marca img { width: 21px; height: 21px; }
+  .lp-tenis .marca-mais { font-size: 16px; }
+}
+
+@media (min-width: 980px) {
+  .lp-tenis .hero {
+    display: flex; flex-direction: row; align-items: center; justify-content: center;
+    gap: clamp(28px, 3vw, 64px); min-height: 100dvh;
+    padding: clamp(24px, 4vh, 56px) clamp(40px, 5vw, 96px);
+  }
+  .lp-tenis .fone { order: -1; flex: none; width: auto; height: min(91dvh, 840px, 60vw); margin: 0; }
+  .lp-tenis .fone video { width: auto; height: 100%; }
+  .lp-tenis .bloco-topo { flex: none; width: fit-content; max-width: min(48vw, 588px); }
+  .lp-tenis .topbar, .lp-tenis .marcas { margin-inline: 0; }
+  .lp-tenis .selo { gap: 8.05px; padding: 4.55px 12.6px 4.55px 4.55px; }
+  .lp-tenis .avatares img { width: 21.6px; height: 21.6px; }
+  .lp-tenis .avatares img + img { margin-left: -6.35px; }
+  .lp-tenis .selo-texto { font-size: 13.85px; }
+  .lp-tenis h1 {
+    margin-top: 26px; margin-left: 0; margin-right: 0;
+    white-space: nowrap; font-size: clamp(62px, 5.74vw, 91px);
+  }
+  .lp-tenis .sub { margin-top: 20px; max-width: 22em; font-size: clamp(18.6px, 1.475vw, 22.8px); }
+  .lp-tenis .cta {
+    margin-top: 30px; height: clamp(69px, 4.97vw, 76px);
+    width: clamp(335px, 25.7vw, 399px); font-size: clamp(20px, 1.58vw, 24px);
+  }
+  .lp-tenis .cta svg { width: clamp(29px, 2.1vw, 33px); height: clamp(29px, 2.1vw, 33px); }
+  .lp-tenis .rodape-cta { margin: 22px 0 0; }
+  .lp-tenis .cta-sub { font-size: clamp(11.75px, 0.949vw, 14.6px); }
+  .lp-tenis .marcas { gap: clamp(11.8px, 0.9vw, 13.9px); margin-top: 15px; }
+  .lp-tenis .marca { width: clamp(38.5px, 2.56vw, 42.6px); height: clamp(38.5px, 2.56vw, 42.6px); }
+  .lp-tenis .marca img { width: clamp(22.3px, 1.49vw, 24.3px); height: clamp(22.3px, 1.49vw, 24.3px); }
+  .lp-tenis .marca-mais { font-size: clamp(17px, 1.16vw, 19px); }
+}
+`;
 
 export function WhatsAppIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    <svg viewBox="0 0 32 32" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M16.04 3C8.9 3 3.1 8.8 3.1 15.94c0 2.28.6 4.5 1.73 6.46L3 29l6.77-1.77a12.9 12.9 0 0 0 6.27 1.6c7.14 0 12.94-5.8 12.94-12.94S23.18 3 16.04 3Zm0 23.66c-1.93 0-3.83-.52-5.49-1.5l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.73 10.73 0 0 1-1.65-5.72c0-5.93 4.83-10.76 10.77-10.76 5.93 0 10.76 4.83 10.76 10.76 0 5.94-4.83 10.72-10.8 10.72Zm5.9-8.03c-.32-.16-1.91-.94-2.21-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.26-.19.22-.37.24-.7.08-.32-.16-1.36-.5-2.6-1.6a9.8 9.8 0 0 1-1.8-2.23c-.19-.32-.02-.5.14-.66.15-.14.32-.37.49-.56.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.72-1.75-1-2.39-.26-.63-.53-.55-.72-.56h-.62c-.21 0-.56.08-.86.4-.29.32-1.13 1.1-1.13 2.7 0 1.58 1.16 3.12 1.32 3.33.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.78.25 1.48.21 2.04.13.62-.09 1.91-.78 2.18-1.53.27-.76.27-1.4.19-1.53-.08-.14-.29-.22-.61-.38Z" />
     </svg>
   );
 }
 
 export function OfertasB() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#0A120E] font-sans text-white antialiased selection:bg-[#25D366]/30">
-      <section className="relative flex flex-1 items-center overflow-hidden">
-        {/* fundo orgânico */}
-        <div aria-hidden className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-32 left-1/2 h-[480px] w-[900px] -translate-x-1/2 rounded-[100%] bg-[#25D366]/15 blur-[130px]" />
-          <div className="absolute -left-40 top-1/3 h-[380px] w-[380px] rounded-full bg-[#FF8A00]/10 blur-[110px]" />
-          <div className="absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full bg-[#00A884]/20 blur-[120px]" />
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/50 to-transparent" />
-        </div>
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-12 pt-10 sm:px-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16 lg:pb-16 lg:pt-14">
-          <div className="order-2 flex justify-center lg:order-1">
-            {/* Vídeo Runners Club Kalfe — anexo enviado, em loop */}
-            <div className="w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[380px]">
-              <video
-                key="runners-club-video"
-                className="block h-auto w-full select-none rounded-2xl"
-                src={runnersVideo.url}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                aria-label="Animação do grupo Runners Club Kalfe com ofertas entrando todo dia"
-              />
+    <div className="lp-tenis">
+      <style dangerouslySetInnerHTML={{ __html: CSS }} />
+      <main className="hero">
+        <div className="bloco-topo">
+          <div className="topbar">
+            <div className="selo">
+              <div className="avatares">
+                {AVATARS.map((src) => (
+                  <img key={src} src={src} alt="" width={19} height={19} decoding="async" />
+                ))}
+              </div>
+              <div className="selo-texto">
+                + de <span>500.000</span> pessoas já economizam com a gente
+              </div>
             </div>
           </div>
-          <div className="order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
-            <div className="inline-flex max-w-full items-center gap-2.5 rounded-2xl border border-[#25D366]/25 bg-gradient-to-r from-white/[0.08] to-[#25D366]/10 px-4 py-2.5 text-left text-[13px] leading-snug text-white/90 shadow-[0_8px_30px_-12px_rgba(37,211,102,0.5)] backdrop-blur">
-              <span className="flex shrink-0 items-center justify-center rounded-full bg-[#25D366] p-1.5 text-white">
-                <WhatsAppIcon className="h-4 w-4" />
-              </span>
-              <span className="font-medium">Nunca mais pague caro em tênis, chuteiras e outros equipamentos!</span>
-            </div>
-            <h1 className="mt-5 max-w-xl text-balance text-[2rem] font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.25rem]">
-              COMPRE TÊNIS<br />COM ATÉ <span className="bg-gradient-to-r from-[#FF8A00] to-[#FFB347] bg-clip-text text-transparent">90% DE DESCONTO</span>
-            </h1>
-            <p className="mt-4 max-w-md text-pretty text-[15px] leading-relaxed text-white/80 sm:max-w-xl sm:text-lg">
-              Encontramos as melhores ofertas de tênis <strong className="text-white">ORIGINAIS</strong> e compartilhamos tudo com você no <strong className="text-white">Runners Club Kalfe</strong>.
+
+          <h1>
+            CHEGA DE PAGAR
+            <br />
+            CARO <span className="destaque">EM TÊNIS!</span>
+          </h1>
+
+          <p className="sub">
+            Encontro as melhores ofertas de tênis <b>ORIGINAIS</b> e compartilho tudo com você.
+          </p>
+
+          <a className="cta" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <WhatsAppIcon />
+            Entrar no Grupo VIP
+          </a>
+
+          <div className="rodape-cta">
+            <p className="cta-sub">
+              Grupo <strong>100% GRATUITO</strong> - saia quando quiser
             </p>
-            <div className="mt-6 w-full max-w-md">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-b from-[#2BE07A] to-[#00C95C] px-8 py-4 text-lg font-extrabold text-white shadow-[0_16px_45px_-10px_rgba(0,230,118,0.9)] transition-all hover:scale-[1.02] hover:brightness-110 active:scale-[0.98]">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 ring-1 ring-white/40">
-                  <WhatsAppIcon className="h-5 w-5" />
-                </span>
-                Entrar no Grupo VIP
-              </a>
-              <p className="mt-3 text-center text-xs leading-relaxed text-white/60 lg:text-left">
-                Grupo <strong className="text-white">100% GRATUITO</strong> — saia quando quiser • Somente lojas oficiais
-              </p>
-            </div>
-            <div className="mt-6 flex w-full max-w-md flex-wrap items-center justify-center gap-2.5 lg:justify-start">
-              {STORE_LOGOS.map((l) => (
-                <span key={l.src} className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-white/20">
-                  <img src={l.src} alt={l.alt} className="h-8 w-8 object-contain" loading="lazy" />
+            <p className="cta-sub">Divulgamos promoções somente de lojas oficiais</p>
+            <div className="marcas" aria-label="Lojas parceiras">
+              {BRAND_LOGOS.map((b) => (
+                <span key={b.src} className="marca">
+                  <img src={b.src} alt={b.alt} width={20} height={20} loading="lazy" decoding="async" />
                 </span>
               ))}
+              <span className="marca marca-mais" aria-label="Mais lojas">
+                +
+              </span>
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="relative border-t border-white/10 bg-black/30">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-3 px-5 py-6 sm:grid-cols-3 sm:gap-4 sm:px-8">
-          <div className="flex items-center justify-center gap-2.5 rounded-2xl bg-white/[0.04] px-4 py-3 text-sm text-white/80 sm:justify-start">
-            <span className="text-base">✅</span> Ofertas verificadas todos os dias
-          </div>
-          <div className="flex items-center justify-center gap-2.5 rounded-2xl bg-white/[0.04] px-4 py-3 text-sm text-white/80 sm:justify-start">
-            <span className="text-base">🏬</span> Somente lojas oficiais
-          </div>
-          <div className="flex items-center justify-center gap-2.5 rounded-2xl bg-white/[0.04] px-4 py-3 text-sm text-white/80 sm:justify-start">
-            <span className="text-base">🔓</span> Grupo gratuito, saia quando quiser
-          </div>
-        </div>
-      </section>
-    </main>
+        <a
+          className="fone"
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Entrar no grupo VIP de ofertas no WhatsApp"
+        >
+          <video
+            key="runners-club-video"
+            src={runnersVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            disablePictureInPicture
+            aria-hidden="true"
+          />
+        </a>
+      </main>
+    </div>
   );
 }
-
-
